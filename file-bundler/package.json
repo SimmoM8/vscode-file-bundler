@@ -6,39 +6,27 @@
   "engines": {
     "vscode": "^1.108.0"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:fileBundler.bundleFolder",
-    "onView:fileBundler.sidebar"
-
-  ],
+  "categories": ["Other"],
+  "activationEvents": ["onView:fileBundler.sidebar"],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-    {
-      "command": "fileBundler.bundleFolder",
-      "title": "File Bundler: Bundle Folder to Clipboard"
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fileBundler",
+          "title": "File Bundler",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "fileBundler": [
+        {
+          "id": "fileBundler.sidebar",
+          "name": "Bundler"
+        }
+      ]
     }
-    ],
-  "viewsContainers": {
-    "activitybar": [
-      {
-        "id": "fileBundler",
-        "title": "File Bundler",
-        "icon": "media/icon.svg"
-      }
-    ]
-  },
-  "views": {
-    "fileBundler": [
-      {
-        "id": "fileBundler.sidebar",
-        "name": "Bundler"
-      }
-    ]
-  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
