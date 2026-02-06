@@ -4,19 +4,21 @@
   "description": "Bundle text files into one copyable block",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.109.0"
+    "vscode": "^1.108.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:fileBundler.bundleFolder"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "file-bundler.helloWorld",
-        "title": "Hello World"
-      }
+    {
+      "command": "fileBundler.bundleFolder",
+      "title": "File Bundler: Bundle Folder to Clipboard"
+    }
     ]
   },
   "scripts": {
